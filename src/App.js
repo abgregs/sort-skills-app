@@ -6,16 +6,18 @@ function App() {
 
   class ItemList extends React.Component {
     render() {
-      const item = data.items[0];
-      return (
-        <div className='ui unstackable items'>
-          <Item 
-          id={item.id}
+      const itemComponents = data.items.map((item) => (
+        <Item 
+          key={'item-'+item.id}
           title={item.title}
           description={item.description}
           url={item.url}
           votes={item.votes}
-          />
+        />
+      ));
+      return (
+        <div className='ui unstackable items'>
+          {itemComponents}
         </div>
       );
     }
