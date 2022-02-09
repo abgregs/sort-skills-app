@@ -7,7 +7,22 @@ function App() {
     render() {
       return (
         <div className='ui unstackable items'>
-          Hello, friend! I am a basic React component.
+          <Item />
+        </div>
+      );
+    }
+  }
+
+  class Item extends React.Component {
+    render() {
+      return (
+        <div className='item'>
+          <div className='middle aligned content'>
+            <div className='description'>
+              <a>Sass</a>
+              <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
+            </div>
+          </div>
         </div>
       );
     }
