@@ -1,13 +1,21 @@
-import './App.css';
 import React from 'react';
+import './App.css';
+import data from './data.js'
 
 function App() {
 
   class ItemList extends React.Component {
     render() {
+      const item = data.items[0];
       return (
         <div className='ui unstackable items'>
-          <Item />
+          <Item 
+          id={item.id}
+          title={item.title}
+          description={item.description}
+          url={item.url}
+          votes={item.votes}
+          />
         </div>
       );
     }
@@ -18,9 +26,17 @@ function App() {
       return (
         <div className='item'>
           <div className='middle aligned content'>
+            <div className='header'>
+              <a>
+                Vote {/* TODO: Vote button will go here */}
+              </a>
+              {this.props.votes}
+            </div>
             <div className='description'>
-              <a>Sass</a>
-              <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
+              <a href={this.props.url}>
+                {this.props.title}
+                </a>
+              <p>{this.props.description}</p>
             </div>
           </div>
         </div>

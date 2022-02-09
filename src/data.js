@@ -1,9 +1,8 @@
-window.Items = (function () {
   function generateVoteCount() {
     return Math.floor((Math.random() * 50) + 15);
   }
 
-const items = [
+  const items = [
     {
       id: 1,
       title: 'Sass',
@@ -34,5 +33,8 @@ const items = [
     },
   ];
 
-  return { items: items };
-}());
+  const data = {
+    items: items
+  }
+
+  export default data;
