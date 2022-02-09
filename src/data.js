@@ -20,7 +20,7 @@
     {
       id: 3,
       title: 'WordPress',
-      description: 'The world&#39;s most popular website builder',
+      description: 'The world\'s most popular website builder',
       url: 'https://wordpress.com/',
       votes: generateVoteCount(),
     },
