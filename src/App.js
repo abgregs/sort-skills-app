@@ -76,7 +76,10 @@ function App() {
     }
 
     render() {
-      const itemComponents = this.state.items.map((item) => (
+      const items = this.state.items.sort((a, b) => (
+        b.votes - a.votes
+      ));
+      const itemComponents = items.map((item) => (
         <Item 
           id={item.id}
           key={'item'+item.id}
