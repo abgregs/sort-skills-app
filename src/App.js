@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 import './App.css';
 import data from './data.js'
@@ -13,7 +12,7 @@ function App() {
     return (
       <div className="icon-missing">{props.title}</div>
     )
-  }
+  } 
 
   const DynamicDiIcon = (props) => {
     const IconComponent = DiIcons[props.icon];
@@ -117,21 +116,21 @@ function App() {
           <div className='middle aligned content'>
             <div className='header'>
               <div className='extra'>
-                <a href={this.props.url} target="_blank">
+                <a href={this.props.url} target="_blank" rel="noreferrer">
                   {this.props.iconLibrary === 'di' && <DynamicDiIcon icon={this.props.icon} title={this.props.title}></DynamicDiIcon>}
                   {this.props.iconLibrary === 'si' && <DynamicSiIcon icon={this.props.icon} title={this.props.title}></DynamicSiIcon>}
                 </a>
               </div>
-              <a onClick={this.handleUpvote}>
+              <div href="#" onClick={this.handleUpvote}>
                 <BiUpvote />
-              </a>
-              <a onClick={this.handleDownvote}>
+              </div>
+              <div href="#" onClick={this.handleDownvote}>
                 <BiDownvote />
-              </a>
+              </div>
               {this.props.votes}
             </div>
             <div className='description'>
-              <a href={this.props.url}>
+              <a href={this.props.url} target="_blank" rel="noreferrer">
                 {this.props.title}
                 </a>
               <p>{this.props.description}</p>
