@@ -5,6 +5,7 @@ import data from './data.js'
 
 import * as DiIcons from 'react-icons/di';
 import * as SiIcons from 'react-icons/si';
+import { BiDownvote, BiUpvote } from 'react-icons/bi';
 
 function App() {
 
@@ -35,16 +36,58 @@ function App() {
   };
 
   class ItemList extends React.Component {
+
+    state = {
+      items: [],
+    };
+  
+    componentDidMount() {
+      this.setState({ items: data.items });
+    }
+
+    handleItemUpvote = (itemId) => {
+      const nextItems = this.state.items.map((item) => {
+        if (item.id === itemId) {
+          return Object.assign({}, item, {
+            votes: item.votes + 1,
+          });
+        } else {
+          return item;
+        }
+      });
+      this.setState({
+        items: nextItems,
+      });
+    }
+
+    handleItemDownvote = (itemId) => {
+      const nextItems = this.state.items.map((item) => {
+        if (item.id === itemId) {
+          return Object.assign({}, item, {
+            votes: item.votes - 1,
+          });
+        } else {
+          return item;
+        }
+      });
+      this.setState({
+        items: nextItems,
+      });
+    }
+
     render() {
-      const itemComponents = data.items.map((item) => (
+      const itemComponents = this.state.items.map((item) => (
         <Item 
-          key={'item-'+item.id}
+          id={item.id}
+          key={'item'+item.id}
           title={item.title}
           description={item.description}
           url={item.url}
           votes={item.votes}
           icon={item.icon}
           iconLibrary = {item.iconLibrary}
+          onUpvote = {this.handleItemUpvote}
+          onDownvote = {this.handleItemDownvote}
         />
       ));
       return (
@@ -57,6 +100,14 @@ function App() {
 
   class Item extends React.Component {
 
+    handleUpvote = () => {
+      this.props.onUpvote(this.props.id);
+    }
+
+    handleDownvote = () => {
+      this.props.onDownvote(this.props.id);
+    }
+
     render() {
       return (
         <div className='item'>
@@ -68,8 +119,11 @@ function App() {
                   {this.props.iconLibrary === 'si' && <DynamicSiIcon icon={this.props.icon} title={this.props.title}></DynamicSiIcon>}
                 </a>
               </div>
-              <a>
-                Vote {/* TODO: Vote button will go here */}
+              <a onClick={this.handleUpvote}>
+                <BiUpvote />
+              </a>
+              <a onClick={this.handleDownvote}>
+                <BiDownvote />
               </a>
               {this.props.votes}
             </div>
