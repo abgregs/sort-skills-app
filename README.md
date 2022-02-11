@@ -1,6 +1,10 @@
 # Sort Skills App
 
-This is an app that lists different technologies and gives users the ability to sort the order of those technologies by adding or removing votes. It's based on a learning project to create a UI for sorted items inspired by [Product Hunt](https://www.producthunt.com/).
+This is an app that lists different technologies and lets users sort them by voting. It's based on a learning project to create a UI for sorted items inspired by [Product Hunt](https://www.producthunt.com/). 
+
+The default order lists the technologies from highest to lowest based on my experience level.
+
+You can [view the project here](https://abgregs.github.io/sort-skills-app/) or learn more about Create React App below to run the project locally.
 
 ## Create React App
 
