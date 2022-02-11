@@ -4,7 +4,8 @@ This is an app that lists different technologies and lets users sort them by vot
 
 The default order lists the technologies from highest to lowest based on my experience level.
 
-You can [view the project here](https://abgregs.github.io/sort-skills-app/) or learn more about Create React App below to run the project locally.
+## View the Project
+You can [view a live version of the project here](https://abgregs.github.io/sort-skills-app/).
 
 ## Create React App
 
