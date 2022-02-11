@@ -56,6 +56,12 @@ function App() {
       });
     }
 
+    handleResetOrder = () => {
+      this.setState({
+        items: data.items,
+      });
+    }
+
     handleItemUpvote = (itemId) => {
       const nextItems = this.state.items.map((item) => {
         if (item.id === itemId) {
@@ -106,8 +112,17 @@ function App() {
       ));
       return (
         <div>
+          <p className="intro">
+            This is an app that lists different technologies and gives users the ability to sort them by voting. It's a quick learning project built with React. Try it out by voting to change the order of the items in the list.
+          </p>
+          <p className="intro">
+          The default sort order is based on my level of experience using each technology (the higher up in the order the more experience I have). Use the <em>Randomize Votes</em> button to mix up the votes or the <em>Reset Order</em> button to return to the default order.
+          </p>
           <div className="buttons-container">
-            <a href="#" onClick={this.handleRandomizeVotes}>Randomize</a>
+            <a href="#" onClick={this.handleRandomizeVotes}>Randomize Votes</a>
+          </div>
+          <div className="buttons-container">
+            <a href="#" onClick={this.handleResetOrder}>Reset Order</a>
           </div>
           
           <div className='ui unstackable items'>

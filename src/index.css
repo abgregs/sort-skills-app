@@ -55,12 +55,14 @@ code {
   padding: 0 2em;
 }
 
-p {
-  margin-bottom: 0;
+.intro {
+  text-align: center;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .ui.dividing.header {
-  margin: 1em 0;
+  margin: 1em 0 0.5em 0;
 }
 
 .brand-icon svg {
@@ -79,5 +81,10 @@ p {
 
   .description {
     text-align: left;
+  }
+
+  .intro {
+    width: 70%;
+    margin: 0 auto 1em;
   }
 }
