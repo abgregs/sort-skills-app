@@ -12,7 +12,7 @@ function App() {
     return (
       <div className="icon-missing">{props.title}</div>
     )
-  } 
+  }
 
   const DynamicDiIcon = (props) => {
     const IconComponent = DiIcons[props.icon];
@@ -42,6 +42,18 @@ function App() {
   
     componentDidMount() {
       this.setState({ items: data.items });
+    }
+
+    handleRandomizeVotes = () => {
+      const nextItems = this.state.items.map((item) => {
+        const newCount = Math.floor((Math.random() * 50) + 15);
+          return Object.assign({}, item, {
+            votes: newCount,
+          })
+      });
+      this.setState({
+        items: nextItems,
+      });
     }
 
     handleItemUpvote = (itemId) => {
@@ -93,8 +105,14 @@ function App() {
         />
       ));
       return (
-        <div className='ui unstackable items'>
-          {itemComponents}
+        <div>
+          <div className="buttons-container">
+            <a href="#" onClick={this.handleRandomizeVotes}>Randomize</a>
+          </div>
+          
+          <div className='ui unstackable items'>
+            {itemComponents}
+          </div>
         </div>
       );
     }
