@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+a,
+a:hover,
+a:focus {
+  color: #551A8B;
+}
+
 #content {
   margin-bottom: 4em;
 }
