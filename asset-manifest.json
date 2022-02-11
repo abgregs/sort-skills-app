@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sort-skills-app/static/css/main.835e6d9e.css",
+    "main.css": "/sort-skills-app/static/css/main.c7ddea07.css",
     "main.js": "/sort-skills-app/static/js/main.d752497f.js",
     "static/js/787.fe924da4.chunk.js": "/sort-skills-app/static/js/787.fe924da4.chunk.js",
     "index.html": "/sort-skills-app/index.html",
-    "main.835e6d9e.css.map": "/sort-skills-app/static/css/main.835e6d9e.css.map",
+    "main.c7ddea07.css.map": "/sort-skills-app/static/css/main.c7ddea07.css.map",
     "main.d752497f.js.map": "/sort-skills-app/static/js/main.d752497f.js.map",
     "787.fe924da4.chunk.js.map": "/sort-skills-app/static/js/787.fe924da4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.835e6d9e.css",
+    "static/css/main.c7ddea07.css",
     "static/js/main.d752497f.js"
   ]
 }
