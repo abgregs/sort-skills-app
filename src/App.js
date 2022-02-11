@@ -114,20 +114,22 @@ function App() {
       return (
         <div className='item'>
           <div className='middle aligned content'>
-            <div className='header'>
+            <div className='vote-container'>
               <div className='extra'>
-                <a href={this.props.url} target="_blank" rel="noreferrer">
+                <a className="brand-icon" href={this.props.url} target="_blank" rel="noreferrer">
                   {this.props.iconLibrary === 'di' && <DynamicDiIcon icon={this.props.icon} title={this.props.title}></DynamicDiIcon>}
                   {this.props.iconLibrary === 'si' && <DynamicSiIcon icon={this.props.icon} title={this.props.title}></DynamicSiIcon>}
                 </a>
               </div>
-              <div href="#" onClick={this.handleUpvote}>
+              <div className="vote" href="#" onClick={this.handleUpvote}>
                 <BiUpvote />
               </div>
-              <div href="#" onClick={this.handleDownvote}>
+              <div className="vote" href="#" onClick={this.handleDownvote}>
                 <BiDownvote />
               </div>
-              {this.props.votes}
+              <div className="vote-count">
+                {this.props.votes}
+              </div>
             </div>
             <div className='description'>
               <a href={this.props.url} target="_blank" rel="noreferrer">
