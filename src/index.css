@@ -64,8 +64,9 @@ p {
 }
 
 .brand-icon svg {
-  height: 5em;
-  width: 5em;
+  height: auto;
+  width: 4em;
+  margin-bottom: 0.5em;
 }
 
 @media screen and (min-width: 410px) {
