@@ -113,10 +113,7 @@ function App() {
       return (
         <div>
           <p className="intro">
-            This is an app that lists different technologies and gives users the ability to sort them by voting. It's a quick learning project built with React. Try it out by voting to change the order of the items in the list.
-          </p>
-          <p className="intro">
-          The default sort order is based on my level of experience using each technology (the higher up in the order the more experience I have). Use the <em>Randomize Votes</em> button to mix up the votes or the <em>Reset Order</em> button to return to the default order.
+            This app lists technologies I use sorted from high to low based on my experience. The sort order changes based on votes for each item in the list. You can interact with the list by changing the votes yourself, randomizing the votes, or resetting the default sort order.
           </p>
           <div className="buttons-container">
             <a href="#" onClick={this.handleRandomizeVotes}>Randomize Votes</a>
